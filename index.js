@@ -75,6 +75,16 @@ async function fullPageScreenshot(url, specificViewport) {
     await page.waitForSelector('iframe', {timeout: 10000});
   } else if (url === 'https://www.quicksilverscientific.com/') {
     await page.waitForSelector('.swiper-slide-inner', {timeout: 8000});
+    await new Promise(r => setTimeout(r, 4000)); // Delay for 2 seconds
+    await page.addStyleTag({
+      content: `
+        * {
+          transform: none !important;
+          transition: none !important;
+        }
+      `
+    });
+    
     const bulEl = await page.waitForSelector('.swiper-pagination-bullet')
     await bulEl.click()
     await page.waitForSelector('.elementor-swiper', { timeout: 6000 })
@@ -151,8 +161,8 @@ async function fullPageScreenshot(url, specificViewport) {
 
 //fullPageScreenshot('https://www.iwp.edu/graduate-school-b/', { width: 1536, height: 960 });
 
-fullPageScreenshot('https://www.partners.net/', { width: 1536, height: 960 });
+//fullPageScreenshot('https://www.partners.net/', { width: 1536, height: 960 });
 
 //fullPageScreenshot('https://www.newtarget.com/', { width: 1536, height: 960 });
 
-//fullPageScreenshot('https://www.quicksilverscientific.com/', { width: 1536, height: 960 });
+fullPageScreenshot('https://www.quicksilverscientific.com/', { width: 1536, height: 960 });
