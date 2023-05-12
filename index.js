@@ -75,12 +75,11 @@ async function fullPageScreenshot(url, specificViewport) {
     await page.waitForSelector('iframe', {timeout: 10000});
   } else if (url === 'https://www.quicksilverscientific.com/') {
     await page.waitForSelector('.swiper-slide-inner', {timeout: 8000});
-    await new Promise(r => setTimeout(r, 4000)); // Delay for 2 seconds
+    await new Promise(r => setTimeout(r, 4000));
     await page.addStyleTag({
       content: `
         * {
-          transform: none !important;
-          transition: none !important;
+            transition-duration: 0.1s !important
         }
       `
     });
