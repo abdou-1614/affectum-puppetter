@@ -73,6 +73,7 @@ async function fullPageScreenshot(url, specificViewport) {
   if (url === 'https://www.iwp.edu/graduate-school-b/') {
     await new Promise(r => setTimeout(r, 3000));
     await page.waitForSelector('iframe', {timeout: 10000});
+    
   } else if (url === 'https://www.quicksilverscientific.com/') {
     await page.waitForSelector('.swiper-slide-inner', {timeout: 8000});
     await new Promise(r => setTimeout(r, 4000));
@@ -139,7 +140,7 @@ async function fullPageScreenshot(url, specificViewport) {
     const { screenshot, position } = iframeImage;
     const iframeImg = await loadImage(screenshot);
     if (position) {
-      ctx.drawImage(iframeImg, position.x , position.y, position.width, position.height);
+      ctx.drawImage(iframeImg, position.x, position.y, position.width, position.height);
     }
   }
   
