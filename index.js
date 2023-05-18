@@ -242,7 +242,6 @@ async function autoScroll(page){
 const urls = [  
   'https://fticommunications.com/',
   'https://www.wainao.me/',
-  'https://www.newtarget.com/',
   'https://www.aprico.life/',
   'https://www.intelsat.com/',
   'https://www.quicksilverscientific.com/',
