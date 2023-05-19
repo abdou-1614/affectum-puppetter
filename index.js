@@ -232,11 +232,6 @@ const urls = [
     iframeSelector: '#pardot_admissions',
   },
   {
-    url: 'https://www.quicksilverscientific.com/',
-    waitForSelector: '.swiper-slide-inner',
-    clickSelector: '.cmplz-btn',
-  },
-  {
     url: 'https://www.iwp.edu/graduate-school-b/',
     waitForSelector: 'iframe',
     iframeSelector: '#pardot_admissions',
@@ -268,6 +263,11 @@ const urls = [
   },
   {
     url: 'https://www.partners.net/',
+  },
+  {
+    url: 'https://www.quicksilverscientific.com/',
+    waitForSelector: '.swiper-slide-inner',
+    clickSelector: '.cmplz-btn',
   },
 ];
 
