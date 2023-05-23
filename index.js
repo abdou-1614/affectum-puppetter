@@ -116,14 +116,6 @@ async function captureScreenshots(urls) {
         await page.waitForSelector(waitForSelector, { timeout: 0 });
       }
 
-      if (iframeSelector) {
-        await page.evaluate(() => {
-          const iframe = document.querySelector('#pardot_admissions');
-          iframe.style.height = '1300px';
-          iframe.style.width = '100%';
-        });
-      }
-
       if (clickSelector) {
         await page.click(clickSelector);
       }
@@ -229,12 +221,10 @@ const urls = [
   {
     url: 'https://www.iwp.edu/graduate-school-a/',
     waitForSelector: 'iframe',
-    iframeSelector: '#pardot_admissions',
   },
   {
     url: 'https://www.iwp.edu/graduate-school-b/',
     waitForSelector: 'iframe',
-    iframeSelector: '#pardot_admissions',
   },
   {
     url: 'https://fticommunications.com/',
